@@ -1,0 +1,19 @@
+test: 
+    path: /test
+    controller: App\Controller\FilmController::createFilm
+
+film_liste: 
+    path: /film
+    controller: App\Controller\FilmController::listeFilm
+
+film_new: 
+    path: /film/new
+    controller: App\Controller\FilmController::new
+
+film_show: 
+    path: /film/{id}
+    controller: App\Controller\FilmController::show
+
+film_ajout_CSV: 
+    path: /ajoutCSV
+    controller: App\Controller\FilmController::ajoutCSV

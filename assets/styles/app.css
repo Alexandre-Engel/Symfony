@@ -1,0 +1,266 @@
+:root {
+    --header-color: #009879;
+}
+
+* {
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+    background: rgb(195, 214, 219);
+}
+
+#page {
+    width: 1000px;
+    margin: auto;
+    background: linear-gradient(90deg, rgba(195, 195, 195, 1) 0%, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 1) 90%, rgba(195, 195, 195, 1) 100%);
+}
+
+
+/* Header */
+
+header, footer {
+    background-color: var(--header-color);
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+h1 a {
+    font-size: 1.5em;
+    color: #FFF;
+    text-decoration: none;
+}
+
+header nav {
+    align-items: center;
+}
+
+nav ul {
+    padding: 0;
+    width: 100%;
+    margin: 0;
+    display: flex;
+}
+
+nav li {
+    list-style: none;
+    text-align: center;
+    vertical-align: middle;
+    width: 180px;
+    background: linear-gradient(90deg, rgba(195, 195, 195, 1) 0%, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 1) 90%, rgba(195, 195, 195, 1) 100%);
+}
+
+header nav a {
+    width: 100%;
+    color: #000;
+    display: inline-block;
+    padding: 10px 0;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+nav li:hover {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(195, 195, 195, 1) 10%, rgba(195, 195, 195, 1) 90%, rgba(255, 255, 255, 1) 100%);
+}
+
+
+/* Content */
+
+#content {
+    padding: 10px 10px 50px;
+}
+
+
+/* Tableau des films / acteurs */
+
+table {
+    margin: 25px auto auto;
+    border-collapse: collapse;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    max-width: 800px;
+    min-width: 600px;
+}
+
+th,
+td {
+    border: black 1px solid;
+    padding: 8px;
+}
+
+thead {
+    position: sticky;
+    top: 0;
+}
+
+table thead th {
+    background-color: var(--header-color);
+    color: #ffffff;
+    font-size: 1.3em;
+}
+
+table tr:nth-of-type(odd) {
+    background-color: #ffffff;
+}
+
+table tr:nth-of-type(even) {
+    background-color: #dddddd;
+}
+
+tbody tr:hover {
+    background-color: #cccccc;
+}
+
+table a {
+    color: #000;
+    display: inline-block;
+    text-decoration: none;
+}
+
+table a:hover {
+    color: rgb(90, 90, 90);
+}
+
+table li {
+    list-style: none;
+}
+
+table ul {
+    padding: 0;
+    margin: 0;
+}
+
+table li {
+    margin: 5px;
+}
+
+table li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+
+/* Formulaires */
+
+input[type="text"],
+input[type="password"] {
+    width: 600px;
+    padding: 20px 20px 10px 5px;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #8797a8;
+    outline: none;
+    color: #343638;
+    font-size: 16px;
+}
+
+input[type="submit"],
+.detail button {
+    background: var(--header-color);
+    border: 0;
+    width: 150px;
+    height: 40px;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+input[type="submit"]:hover {
+    background: rgb(90, 90, 90);
+    animation-name: shake;
+}
+
+.form-inputs,
+.champ {
+    width: fit-content;
+    margin: auto;
+}
+
+.champ {
+    margin-bottom: 15px;
+}
+
+.submit-button {
+    margin-top: 20px;
+}
+
+.champ select {
+    margin-left: 20px;
+}
+
+
+/* Divers */
+
+.italic {
+    font-style: italic;
+}
+
+.center-text,
+h2 {
+    text-align: center;
+}
+
+.right-text {
+    text-align: right;
+}
+
+.center {
+    margin: auto;
+    width: fit-content;
+}
+
+.center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.float-right {
+    float: right;
+}
+
+#content #liste-film a:visited, #content #liste-acteur a:visited, #connexion a:visited{
+    color: blue;
+}
+
+#topButton {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    box-shadow: inset 0 1px 0 0 #ffffff;
+    background: #ffffff linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+    border-radius: 4px;
+    border: 1px solid #dcdcdc;
+    cursor: pointer;
+    color: #666666;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+}
+
+#topButton:hover {
+    background: #f6f6f6 linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+}
+
+.delete-button {
+    width: 24px;
+    display: block;
+    margin: auto;
+}
+
+.affiche-film {
+    width: 30%;
+    display: block;
+    margin: auto auto 25px;
+}
+
+footer div {
+    color: #FFF;
+}
