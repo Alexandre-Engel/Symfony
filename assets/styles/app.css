@@ -1,5 +1,5 @@
 :root {
-    --header-color: #009879;
+    --header-color: #4d4ae6;
 }
 
 * {
@@ -44,6 +44,7 @@ nav ul {
     width: 100%;
     margin: 0;
     display: flex;
+    
 }
 
 nav li {
@@ -52,6 +53,7 @@ nav li {
     vertical-align: middle;
     width: 180px;
     background: linear-gradient(90deg, rgba(195, 195, 195, 1) 0%, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 1) 90%, rgba(195, 195, 195, 1) 100%);
+    
 }
 
 header nav a {
