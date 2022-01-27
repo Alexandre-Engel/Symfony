@@ -2,6 +2,9 @@
     "aharen/omdbapi": {
         "version": "v2.1"
     },
+    "cmen/google-charts-bundle": {
+        "version": "5.0.0"
+    },
     "composer/package-versions-deprecated": {
         "version": "1.11.99.4"
     },

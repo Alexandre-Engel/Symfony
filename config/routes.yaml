@@ -17,3 +17,7 @@ film_show:
 film_ajout_CSV: 
     path: /ajoutCSV
     controller: App\Controller\FilmController::ajoutCSV
+
+fromage: 
+    path: /fromage
+    controller: App\Controller\FilmController::fromage

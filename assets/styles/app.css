@@ -265,4 +265,16 @@ h2 {
 
 footer div {
     color: #FFF;
+    position:fixed;
+    bottom:0px;
+    z-index:1;
+    width:100%;
+}
+
+footer {
+    position:fixed;
+    text-align:center;
+    bottom:0px;
+    z-index:1;
+    width:100%;
 }

@@ -1,12 +1,24 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {% for film in liste_film %}
-        <div class='film_item'>
-            <h3><a href="{{ path('film_show', {'id':film.Id}) }}">{{ film.getTitre() }}</a></h3>
-            <p>Note : {{ film.getScore() }}</p>
+    
 
+            <table>
+                <thead>
+                    <tr>
+                        <th>Titre</th>
+                        <th>Score</th>
+                        <th>Nb Votants</th>
+                    </tr>
+                </thead>
+                {% for film in liste_film %}
+                    <tr>
+                        <td><a href="{{ path('film_show', {'id':film.Id}) }}">{{ film.getTitre() }}</a></td>
+                        <td class="center-text">{{ film.getScore() }}</td>
+                        <td class="center-text">{{ film.getNbVotant() }}</td>
+                    <tr/>
+                {% endfor %}    
+            </table>
 
-        </div>
-    {% endfor %}
+    
 {% endblock %}

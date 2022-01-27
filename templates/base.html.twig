@@ -11,13 +11,21 @@
     </head>
     <body>
         <header>
-            <div>Bienvenue sur FilmHub</div>
-            <a href="{{ path('film_new') }}">Ajouter un film</a>
-            <a href="{{ path('film_liste') }}">Afficher tous les films</a>
+            <h1><a href="{{ path('film_liste') }}"> Bienvenue sur FilmHub</a></h1>
+            <nav>
+            <ul>
+                <li><a href="{{ path('film_new') }}">Ajouter un film</a></li>
+                <li><a href="{{ path('film_ajout_CSV') }}">Afficher des films via un CSV</a></li>
+                <li><a href="{{ path('film_liste') }}">Afficher tous les films</a></li>
+            </ul>
+                
+                
+            </nav>
+            
         </header>
         {% block body %}{% endblock %}
         <footer>
-
+            <div>Site créer dans le cadre du cours de PHP avancé<br>© 2021 Alexandre Engel.</div>
         </footer>  
     </body>
     

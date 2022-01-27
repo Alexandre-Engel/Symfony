@@ -1,8 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<div>{{ film.titre }}</div>
-<div>{{ film.description }}</div>
-<div>{{ film.score }}</div>
-<div>{{ form(form) }}</div>
+<div class="detaile">
+    <div><h1>{{ film.titre }}<h1></div>
+    <div>{{ film.description }}</div>
+    <div>Il a reçu une note de {{ film.score }}/10 de la part de {{ film.NbVotant }} votant(s)</div>
+    <div>{{ form(form) }}</div>
+</div>
+
 {% endblock %}

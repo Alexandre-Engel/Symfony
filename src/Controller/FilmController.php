@@ -15,6 +15,8 @@ use Symfony\Component\HttpFoundation\Request;
 use aharen\OMDbAPI;
 use GuzzleHttp\Psr7\UploadedFile;
 use League\Csv\Reader;
+use CMEN\GoogleChartsBundle\GoogleCharts\Charts\PieChart;
+
 
 
 
@@ -150,7 +152,44 @@ class FilmController extends AbstractController
 
     }
 
+    public function fromage(ManagerRegistry $doctrine)
+    {
+        $pieChart = new PieChart();
 
+        $tabNbScore = [];
+        for ($i = 0; $i <= 10; $i++){
+            $tab = $doctrine->getRepository(Film::class)->findBy(array('score' => $i), array('titre' => 'ASC'), $limit = null, $offset = null);
+            $tabNbScore[$i] = sizeof($tab);
+        }
+            
+        $pieChart->getData()->setArrayToDataTable(
+            [
+            ['Film', 'Score'],
+            ['0', $tabNbScore[0]],
+            ['1', $tabNbScore[1]],
+            ['2', $tabNbScore[2]],
+            ['3', $tabNbScore[3]],
+            ['4', $tabNbScore[4]],
+            ['5', $tabNbScore[5]],
+            ['6', $tabNbScore[6]],
+            ['7', $tabNbScore[7]],
+            ['8', $tabNbScore[8]],
+            ['9', $tabNbScore[9]],
+            ['10', $tabNbScore[10]]
+            ]
+        );
+        $pieChart->getOptions()->setTitle('Film par score');
+        $pieChart->getOptions()->setHeight(500);
+        $pieChart->getOptions()->setWidth(900);
+        $pieChart->getOptions()->getTitleTextStyle()->setBold(true);
+        $pieChart->getOptions()->getTitleTextStyle()->setColor('#009900');
+        $pieChart->getOptions()->getTitleTextStyle()->setItalic(true);
+        $pieChart->getOptions()->getTitleTextStyle()->setFontName('Arial');
+        $pieChart->getOptions()->getTitleTextStyle()->setFontSize(20);
+
+        return $this->render('film/fromage.html.twig', array('piechart' => $pieChart));
+    }
+    
     
 
 
