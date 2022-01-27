@@ -1,0 +1,34 @@
+
+***************************************************************************************
+Vidéo de projet tuteuré S3 - Année 2021-2022
+---------------------------------------------------------------------------------------
+
+Titre du projet : 
+Goblin's Revenge
+
+Nom/prénom du tuteur :
+Christophe Jaloux
+
+
+Nom/prénom des membres du groupe : 
+Mia Ben Redjeb
+Melvin Curinier
+Alexandre Engel
+Nicolas Guruphat
+Dylan Leclercq
+Mathis Malek
+
+
+Brève description du projet :
+Goblin's Revenge est un jeu de gestion qui tourne sur Unity. 
+De plus mon projet est le meilleur projet de l'iut. Mon tuteur sera fier de notre travail ^^
+
+
+Nom de fichier de la vidéo :
+VideoPtutS3_2022_Goblins_Revenge_AE_DL_MC_MM_MR_NG_CJ
+
+
+Durée de la vidéo : 
+3:21
+
+

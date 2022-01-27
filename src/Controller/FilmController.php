@@ -8,12 +8,9 @@ use App\Form\Type\SuppressionFilm;
 use App\Form\Type\CSV;
 use App\Service\ChercheFilm;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Film;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
-use aharen\OMDbAPI;
-use GuzzleHttp\Psr7\UploadedFile;
 use League\Csv\Reader;
 use CMEN\GoogleChartsBundle\GoogleCharts\Charts\PieChart;
 
@@ -130,23 +127,27 @@ class FilmController extends AbstractController
 
             $header = $csv->getHeader();
             $records = $csv->getRecords();
-    
-            foreach ($records as $record){
-                $film = new Film();
-                $film->setTitre($record[$header[0]])
-                    ->setDescription($record[$header[1]])
-                    ->setScore($record[$header[2]]);
+            if ($header === ["titre", "description", "score"]) { //à changer en fonction du header du fichier (name à la place de titre etc...)
+                foreach ($records as $record){
+                    $film = new Film();
+                    $film->setTitre($record[$header[0]])
+                        ->setDescription($record[$header[1]])
+                        ->setScore($record[$header[2]]);
 
-                    $entityManager = $doctrine->getManager();
-                    $entityManager->persist($film);
-            } 
-            $entityManager->flush();
-
+                        $entityManager = $doctrine->getManager();
+                        $entityManager->persist($film);
+                } 
+                $entityManager->flush();
+            } else {
+                throw $this->createNotFoundException(
+                    'erreur de fichier'
+                );
+            }
             
             return $this->redirectToRoute('film_liste');
         }
     
-        return $this->renderForm('film/api.html.twig', [
+        return $this->renderForm('film/CSV.html.twig', [
             'form' => $form
         ]);
 
